@@ -10,23 +10,24 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Ââåäèòå äâà ðèìñêèõ èëè äâà àðàáñêèõ ÷èñëà è îäèí èç îïåðàòîâ +-*/");
+		System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ€Ð¸Ð¼ÑÐºÐ¸Ñ… Ð¸Ð»Ð¸ Ð´Ð²Ð° Ð°Ñ€Ð°Ð±ÑÐºÐ¸Ñ… Ñ‡Ð¸ÑÐ»Ð° Ð¸ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ð² +-*/");
 		String numbers = sc.nextLine();
 		System.out.println(calc(numbers));
 	}
-	//ïðåîáðàçîâàíèå ââåäåííîé ñòðîêè â ìàññèâ "÷èñëî-îïåðàòîð-÷èñëî" â ñëó÷àå ñîîòâåòñòâèÿ ñòðîêè ôîðìàòó, èíà÷å âûáðàñûâàåò Exception
+         // Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð² Ð¼Ð°ÑÑÐ¸Ð² "Ñ‡Ð¸ÑÐ»Ð¾-Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€-Ñ‡Ð¸ÑÐ»Ð¾" Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ
+	// ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ñ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ñƒ, Ð¸Ð½Ð°Ñ‡Ðµ Ð²Ñ‹Ð±Ñ€Ð°ÑÑ‹Ð²Ð°ÐµÑ‚ Exception
 	static String[] reg(String str) throws Exception {
 		str = str.replace(" ", "");
 		Pattern pattern = null;
 		Matcher matcher = null;
 		pattern = Pattern.compile("^([^\\+\\-\\*\\/])*$");
 		matcher = pattern.matcher(str);
-		if(matcher.find()) throw new Exception("ñòðîêà íå ÿâëÿåòñÿ ìàòåìàòè÷åñêîé îïåðàöèåé");
+		if(matcher.find()) throw new Exception("ÑÑ‚Ñ€Ð¾ÐºÐ° Ð½Ðµ ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð¼Ð°Ñ‚ÐµÐ¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð¹ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÐµÐ¹");
 				
 		pattern = Pattern.compile("^([1-9]|10)([\\+\\-\\*\\/]){1}(I|II|III|IV|V|VI|VII|VIII|IX|X)$"
 				+ "|^(I|II|III|IV|V|VI|VII|VIII|IX|X)([\\+\\-\\*\\/]){1}([1-9]|10)$");
 		matcher = pattern.matcher(str);
-		if(matcher.find()) throw new Exception("èñïîëüçóþòñÿ îäíîâðåìåííî ðàçíûå ñèñòåìû ñ÷èñëåíèÿ");
+		if(matcher.find()) throw new Exception("Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÑŽÑ‚ÑÑ Ð¾Ð´Ð½Ð¾Ð²Ñ€ÐµÐ¼ÐµÐ½Ð½Ð¾ Ñ€Ð°Ð·Ð½Ñ‹Ðµ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹ ÑÑ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ñ");
 		
 		pattern = Pattern.compile("^([1-9]|10)([\\+\\-\\*\\/]){1}([1-9]|10)$"
 		+ "|^(I|II|III|IV|V|VI|VII|VIII|IX|X)([\\+\\-\\*\\/]){1}(I|II|III|IV|V|VI|VII|VIII|IX|X)$");
@@ -38,12 +39,12 @@ public class Main {
 	    	}    	
 	    	}
 	    else {
-	    	throw new Exception("ôîðìàò ìàòåìàòè÷åñêîé îïåðàöèè íå óäîâëåòâîðÿåò çàäàíèþ - äâà îïåðàíäà îò 1 äî 10 è îäèí îïåðàòîð (+, -, /, *)");
+	    	throw new Exception("Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚ Ð¼Ð°Ñ‚ÐµÐ¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð¹ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ð½Ðµ ÑƒÐ´Ð¾Ð²Ð»ÐµÑ‚Ð²Ð¾Ñ€ÑÐµÑ‚ Ð·Ð°Ð´Ð°Ð½Ð¸ÑŽ - Ð´Ð²Ð° Ð¾Ð¿ÐµÑ€Ð°Ð½Ð´Ð° Ð¾Ñ‚ 1 Ð´Ð¾ 10 Ð¸ Ð¾Ð´Ð¸Ð½ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ (+, -, /, *)");
 	    }
 	    matcher.start();
 	    return arr;
 	}
-	//ïðåîáðàçîâàíèå ðèìñêîãî ÷èñëà â àðàáñêîå è âîçâðàò â âèäå String
+	// Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ€Ð¸Ð¼ÑÐºÐ¾Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð° Ð² Ð°Ñ€Ð°Ð±ÑÐºÐ¾Ðµ Ð¸ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‚ Ð² Ð²Ð¸Ð´Ðµ String
 	public static int romToAr(String roman) {
 	switch(roman){
 	case ("I"): return 1;
@@ -59,13 +60,13 @@ public class Main {
 	}
 	return -1;
 	}
-	//ïîäñ÷åò è âîçâðàò ðåçóëüòàòà â íóæíîì ôîðìàòå
+	// Ð¿Ð¾Ð´ÑÑ‡ÐµÑ‚ Ð¸ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‚ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð° Ð² Ð½ÑƒÐ¶Ð½Ð¾Ð¼ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ
 	public static String calc(String input) throws Exception {
 		int op1 = 0, op2 = 0, result = 0;
 		String[] arr = reg(input);
 		//Arrays.asList(arr).forEach(t -> System.out.println(t));
 		if(arr[3] != null) {
-			if(romToAr(arr[3]) - romToAr(arr[5]) < 1 && arr[4].equals("-")) throw new Exception("â ðèìñêîé ñèñòåìå íåò îòðèöàòåëüíûõ ÷èñåë");
+			if(romToAr(arr[3]) - romToAr(arr[5]) < 1 && arr[4].equals("-")) throw new Exception("Ð² Ñ€Ð¸Ð¼ÑÐºÐ¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð½ÐµÑ‚ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ñ‡Ð¸ÑÐµÐ»");
 		}
 		if(arr[0]!=null) op1 = Integer.parseInt(arr[0]);
 		if(arr[2]!=null) op2 = Integer.parseInt(arr[2]);
@@ -78,7 +79,7 @@ public class Main {
 		if(arr[3] != null) return arabicToRoman(result);
 		return String.valueOf(result);
 	}
-	//Ïåðåâîä àðàáñêîãî ÷èñëà â ðèìñêîå è âîçâðàò â âèäå ñòðîêè
+	// ÐŸÐµÑ€ÐµÐ²Ð¾Ð´ Ð°Ñ€Ð°Ð±ÑÐºÐ¾Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð° Ð² Ñ€Ð¸Ð¼ÑÐºÐ¾Ðµ Ð¸ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‚ Ð² Ð²Ð¸Ð´Ðµ ÑÑ‚Ñ€Ð¾ÐºÐ¸
 	public static String arabicToRoman(int number) {
 	    List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
 
